@@ -1,1 +1,26 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+$navbar-default-bg: #64C0C4;
+
+.navbar {
+     background-color: #64C0C4 !important;
+}
+  
+.btn-xlarge {
+    background-color:#64C0C4;
+    color:black;
+}
+.btn-xlarge:hover {
+    color:#CBE2E3;
+    background-color: #246265;
+    text-decoration: none;
+}
+/*
+.navbar-brand {
+    font-size: 3rem;
+}
+
+h1 { 
+    color: red;
+}
+*/
