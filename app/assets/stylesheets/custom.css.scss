@@ -1,26 +1,30 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-$navbar-default-bg: #64C0C4;
+$navbar-color: #64C0C4;
 
 .navbar {
-     background-color: #64C0C4 !important;
+  background-color: $navbar-color !important;
 }
   
 .btn-xlarge {
-    background-color:#64C0C4;
-    color:black;
+  background-color: $navbar-color;
+  color:black;
 }
 .btn-xlarge:hover {
-    color:#CBE2E3;
-    background-color: #246265;
-    text-decoration: none;
+  color:#CBE2E3;
+  background-color: #246265;
+  text-decoration: none;
 }
+.container{
+  margin: auto;
+}
+
 /*
 .navbar-brand {
     font-size: 3rem;
 }
-
 h1 { 
-    color: red;
+  color: red;
 }
+
 */

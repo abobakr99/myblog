@@ -1,6 +1,7 @@
+<div class="container">
 <div class="row">
-  <div class="col-md-12">
-    <%= form_for(@article, :html => {class: "form-horizontal",multipart: true,role: "form"}) do |f| %>
+  <div class="col-md-12" >
+    <%= form_with model: @article do |f| %>
        <div class="form-group">
          <div class="control-label col-md-2">
            <%= f.label :title %>
@@ -25,6 +26,7 @@
        </div>
     <% end %>
   </div>
+</div>
 </div>
 
 
