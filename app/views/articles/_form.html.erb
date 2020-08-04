@@ -1,30 +1,32 @@
-<div class="container">
-<div class="row">
-  <div class="col-md-12" >
-    <%= form_with model: @article do |f| %>
-       <div class="form-group">
-         <div class="control-label col-md-2">
-           <%= f.label :title %>
-         </div>
-         <div class="col-md-8">
-           <%= f.text_field :title, class: "form-control", placeholder: "Article Title", autofocus: true %>
-         </div>
-       </div>
+<%= render 'shared/errors', obj: @article%>
 
-       <div class="form-group">
-         <div class="control-label col-md-2">
-           <%= f.label :text %>
-         </div>
-         <div class="col-md-8">
-           <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Article Content" %>
-         </div>
-       </div> 
-       <div class="form-group">
-         <div class="col-md-offset-2 col-md-10">
-         <%= f.submit class: "btn btn-primary btn-lg btn-xlarge" %>
-         </div>
-       </div>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_with model: @article, local: true, class: "form-horizontal" do |f| %>
+        <div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :title %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :title, class: "form-control", placeholder: "Article Title", autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :text %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Article Content" %>
+          </div>
+        </div> 
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+          <%= f.submit class: "btn btn-primary btn-lg btn-xlarge" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
