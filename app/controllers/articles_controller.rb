@@ -1,10 +1,11 @@
 class ArticlesController < ApplicationController
-  # before_action :find_article , only:[:edit,:update,:destroy]
-  def new
-    @article = Article.new
+  before_action :find_article , only: [:edit,:update ]
+  
+  def show
   end
 
-  def show
+  def new
+    @article = Article.new
   end
 
   def create
@@ -17,13 +18,22 @@ class ArticlesController < ApplicationController
       end
   end
 
-  def edit 
+  def edit
   end
 
   def update
+    if @article.update(article_params)
+      flash[:success] = "Article was updated successfuly "
+      redirect_to root_path
+    else
+      redirect_to edit_article_path(@article)
+    end
   end 
 
   private
+  def find_article
+    @article = Article.find(params[:id])
+  end
   
   def article_params
     params.require(:article).permit(:title, :text)
