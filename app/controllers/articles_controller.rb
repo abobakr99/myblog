@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :find_article , only: [:edit,:update ]
+  before_action :find_article , only: [:edit,:update,:show ]
+  def index
+    @articles= Article.all
+  end
 
+  def show
+  end
+  
   def new
     @article = Article.new
   end
@@ -9,7 +15,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
       if @article.save
         flash[:success] ="Article was created successfully!"
-        redirect_to root_path 
+        redirect_to @article
       else
         render 'new'
       end

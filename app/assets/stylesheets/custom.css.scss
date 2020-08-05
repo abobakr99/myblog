@@ -1,6 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-$navbar-color: #64C0C4;
+//$navbar-color: #64C0C4;
+$navbar-color: #5BB6BA;
+$navbar-color-dark: #31676A;
 
 .navbar {
   background-color: $navbar-color !important;
@@ -12,14 +14,23 @@ $navbar-color: #64C0C4;
 }
 .btn-xlarge:hover {
   color:#CBE2E3;
-  background-color: #246265;
+  background-color: $navbar-color-dark;
   text-decoration: none;
 }
 .container{
   margin: auto;
 }
+.article-title{
+  font-size: 2.5rem;
+}
+.article-body{
+  font-size: 1rem;
+}
 
 /*
+.card-link{
+  color:$navbar-color-dark;
+}
 .navbar-brand {
     font-size: 3rem;
 }
