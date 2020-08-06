@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :find_article , only: [:edit,:update,:show ]
+  before_action :find_article , only: [:edit,:update,:show,:destroy ]
   def index
     @articles= Article.all
   end
 
   def show
   end
-  
+
   def new
     @article = Article.new
   end
@@ -31,6 +31,11 @@ class ArticlesController < ApplicationController
     else
       redirect_to edit_article_path(@article)
     end
+  end 
+
+  def destroy
+    @article.destroy
+    redirect_to articles_path
   end 
 
   private

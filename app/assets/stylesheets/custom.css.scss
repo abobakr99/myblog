@@ -1,6 +1,12 @@
 @import 'bootstrap/dist/css/bootstrap';
+//@import '@fortawesome/fontawesome-free';
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-//$navbar-color: #64C0C4;
 $navbar-color: #5BB6BA;
 $navbar-color-dark: #31676A;
 
@@ -27,7 +33,15 @@ $navbar-color-dark: #31676A;
   font-size: 1rem;
 }
 
+
 /*
+.right{
+  float: right;
+}
+.gap{
+  margin-top: 15px;
+  //margin-bottom: 5px;
+}
 .card-link{
   color:$navbar-color-dark;
 }
