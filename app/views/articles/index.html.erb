@@ -1,19 +1,17 @@
 <% @articles.each do |article| %>
-  <div class="container">
-    <div class="row">
-      <div class= "card col-md-8 gap">
-          <div class= "card-body">
-            <div class= "card-title">
-              <h2 class= "artilce-title"> <%= article.title%> </h2>
-            </div>
-            <p>
-              <small class="font-italic"> 
-                Some Writer | <%=article.created_at.strftime("%B %d, %Y") %>
-              </small> 
-            </p>
-            <%= link_to 'Read Article', article_path(article), class:"btn btn-info btn-sm" %>
+  <div class="row">
+    <div class= "card col-md-8 gap">
+        <div class= "card-body">
+          <div class= "card-title">
+            <h2 class= "artilce-title"> <%= article.title%> </h2>
           </div>
-      </div>
+          <p>
+            <small class="font-italic"> 
+              Some Writer | <%=article.created_at.strftime("%B %d, %Y") %>
+            </small> 
+          </p>
+          <%= link_to 'Read Article', article_path(article), class:"btn btn-info btn-sm" %>
+        </div>
     </div>
   </div>
 <% end %>%>

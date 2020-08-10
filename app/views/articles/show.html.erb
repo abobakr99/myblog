@@ -1,19 +1,17 @@
-<div class="container">
-  <div class ="row">
-    <div class= "col-md-8">
-      <div class="card">
-        <div class="card-header">
-          <h2 class="article-title"><%= @article.title%> </h2><br/>
-            <small class="font-italic"> Some Writer | <%=@article.created_at.strftime("%B %d, %Y") %></small>
-            <div class="float-right"> 
-              <!-- rendering partial for edit and delete actions -->
-              <%= render 'shared/article_actions'%>
-            </div>
-        </div>
-        <div class="card-body article-body" >
-          <p> <%= @article.text%> </p> 
-        </div>
+<div class ="row">
+  <div class= "col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="article-title"><%= @article.title%> </h2><br/>
+          <small class="font-italic"> Some Writer | <%=@article.created_at.strftime("%B %d, %Y") %></small>
+          <div class="float-right"> 
+            <!-- rendering partial for edit and delete actions -->
+            <%= render 'shared/article_actions'%>
+          </div>
+      </div>
+      <div class="card-body article-body" >
+        <p> <%= @article.text%> </p> 
       </div>
     </div>
   </div>
-</dive>
+</div>
