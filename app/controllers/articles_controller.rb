@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :find_article , only: [:edit,:update,:show,:destroy ]
+
   def index
     @articles= Article.all
   end
@@ -29,7 +30,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article was updated successfuly "
       redirect_to article_path(@article)
     else
-      redirect_to edit_article_path(@article)
+      render 'edit'
     end
   end 
 

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Myblog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +13,8 @@
   <body>
     <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %> 
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
-</html>
+</html> 
