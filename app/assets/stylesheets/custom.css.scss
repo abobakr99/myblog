@@ -8,10 +8,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-
-$navbar-color: #5BB6BA; 
+$navbar-color: #5BB6BA;
 $navbar-color-dark: #31676A;
 
+small{
+  font-size: 14pt;
+}
 .navbar {
   background-color: $navbar-color !important;
  // margin-bottom: 20px !important;
@@ -45,7 +47,6 @@ $navbar-color-dark: #31676A;
 }
 
 /*
-
 body {
   margin: 0px;
 }

@@ -3,8 +3,11 @@
     <div class="card">
       <div class="card-header">
         <h2 class="article-title"><%= @article.title%> </h2><br/>
-          <small class="font-italic"> 
-            <strong><%= @article.user.name.capitalize()%></strong> | 
+          <small > 
+            <% author_name= @article.user.name.capitalize()%>
+            <!--<strong><%= @article.user.name.capitalize()%></strong> | 
+             -->
+            <%= link_to author_name , user_my_articles_path(@article.user) %> |
             <%=@article.created_at.strftime("%B %d, %Y") %>
           </small>
           <div class="float-right"> 

@@ -1,19 +1,14 @@
 class ArticlesController < ApplicationController
   before_action :find_article , only: [:edit,:update,:show,:destroy ]
   before_action :authenticate_user! , except: [:index, :show]
-
+  #before_action :find_all_articles , :only [:index, :show_user_articles]
   def index
     @articles= Article.all
   end
 
   def show
   end
-
-  def show_user_articles
-    @articles = current_user.articles
-    render 'index'
-  end
-
+  
   def new
     @article = Article.new
   end
@@ -53,5 +48,8 @@ class ArticlesController < ApplicationController
   
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+  def find_all_articles
+    @articles= Article.all
   end
 end
