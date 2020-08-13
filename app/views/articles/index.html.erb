@@ -1,17 +1,26 @@
-<% @articles.each do |article| %>
-  <div class="row">
-    <div class= "card col-md-8 gap">
-        <div class= "card-body">
-          <div class= "card-title">
-            <h2 class= "artilce-title"> <%= article.title%> </h2>
+<% if current_user.articles.count > 0 %>
+  <% @articles.each do |article| %>
+    <div class="row">
+      <div class= "card col-md-8 gap">
+          <div class= "card-body">
+            <div class= "card-title">
+              <h2 class= "artilce-title"> <%= article.title%> </h2>
+            </div>
+            <p>
+              <small class="font-italic"> 
+                <strong><%= current_user.name.capitalize() %></strong> | <%=article.created_at.strftime("%B %d, %Y") %>
+              </small> 
+            </p>
+            <%= link_to 'Read Article', article_path(article), class:"btn btn-info btn-sm" %>
           </div>
-          <p>
-            <small class="font-italic"> 
-              Some Writer | <%=article.created_at.strftime("%B %d, %Y") %>
-            </small> 
-          </p>
-          <%= link_to 'Read Article', article_path(article), class:"btn btn-info btn-sm" %>
-        </div>
+      </div>
+    </div>
+  <% end %>
+<%else%>
+  <div class= "card-body">
+    <div class= "card-title">
+    <h4> Create your first article </h4>
+    <%= link_to 'New Article', new_article_path, class:"btn btn-info btn-sm" %>
     </div>
   </div>
-<% end %>%>
+<% end %>

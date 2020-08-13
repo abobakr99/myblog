@@ -9,19 +9,20 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 
-$navbar-color: #5BB6BA;
+$navbar-color: #5BB6BA; 
 $navbar-color-dark: #31676A;
 
 .navbar {
   background-color: $navbar-color !important;
+ // margin-bottom: 20px !important;
 }
-  
 .btn-xlarge {
   background-color: $navbar-color;
   color:black;
 }
 .btn-xlarge:hover {
-  color:#CBE2E3;
+  //color:#CBE2E3;
+  color: white;
   background-color: $navbar-color-dark;
   text-decoration: none;
 }
@@ -33,14 +34,37 @@ $navbar-color-dark: #31676A;
 }
 .container{
   margin: auto;
-} 
+}
+.user-menu{
+  float: right; ;
+  margin-right: 90px;
+}
+.dropdown-item:hover{
+   background-color: $navbar-color;
+   color: white;
+}
+
 /*
+
+body {
+  margin: 0px;
+}
+.box{
+  padding: 20px;
+  //box-sizing: border-box;
+}
 .container-fluid{
   height: 100%;
   //display: table;
   width: 100%;
   padding-right: 0;
   padding-left: 0;
+}
+.container{
+  padding-top: 20px;
+  padding-right: 20px ;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
 .right{
   float: right;

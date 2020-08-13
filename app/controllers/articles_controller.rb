@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :find_article , only: [:edit,:update,:show,:destroy ]
+  before_action :authenticate_user! , except: [:index, :show]
 
   def index
     @articles= Article.all
@@ -8,12 +9,18 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def show_user_articles
+    @articles = current_user.articles
+    render 'index'
+  end
+
   def new
     @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
       if @article.save
         flash[:success] ="Article was created successfully!"
         redirect_to @article
