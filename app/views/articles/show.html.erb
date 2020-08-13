@@ -3,7 +3,10 @@
     <div class="card">
       <div class="card-header">
         <h2 class="article-title"><%= @article.title%> </h2><br/>
-          <small class="font-italic"> Some Writer | <%=@article.created_at.strftime("%B %d, %Y") %></small>
+          <small class="font-italic"> 
+            <strong><%= @article.user.name.capitalize()%></strong> | 
+            <%=@article.created_at.strftime("%B %d, %Y") %>
+          </small>
           <div class="float-right"> 
             <!-- rendering partial for edit and delete actions -->
             <%= render 'shared/article_actions'%>

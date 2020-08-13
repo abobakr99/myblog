@@ -8,7 +8,8 @@
             </div>
             <p>
               <small class="font-italic"> 
-                <strong><%= current_user.name.capitalize() %></strong> | <%=article.created_at.strftime("%B %d, %Y") %>
+                <strong><%= article.user.name.capitalize()%></strong> | 
+                <%=article.created_at.strftime("%B %d, %Y") %>
               </small> 
             </p>
             <%= link_to 'Read Article', article_path(article), class:"btn btn-info btn-sm" %>
