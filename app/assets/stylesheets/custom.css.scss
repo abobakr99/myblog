@@ -16,7 +16,7 @@ small{
 }
 .navbar {
   background-color: $navbar-color !important;
- // margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
 .btn-xlarge {
   background-color: $navbar-color;
@@ -31,12 +31,11 @@ small{
 .article-title{
   font-size: 2.5rem;
 }
+
 .article-body{
   font-size: 1rem;
 }
-.container{
-  margin: auto;
-}
+
 .user-menu{
   float: right; ;
   margin-right: 90px;
@@ -44,6 +43,22 @@ small{
 .dropdown-item:hover{
    background-color: $navbar-color;
    color: white;
+}
+
+.center{
+  text-align: center;
+}
+
+
+.container{
+  //width: 100%;
+  //flex-flow: column wrap;
+  //justify-content: center;
+  //display: inline-block;
+  //padding-right: 15px;
+  //padding-left: 15px;
+  //margin-right: auto;
+  //margin-left: auto;
 }
 
 /*
@@ -62,10 +77,11 @@ body {
   padding-left: 0;
 }
 .container{
-  padding-top: 20px;
-  padding-right: 20px ;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .right{
   float: right;
@@ -84,6 +100,10 @@ h1 {
   color: red;
 }
 .card{
-  margin: auto;
+  margin: 0 auto;
+}
+
+.card{
+  margin: 0 auto;
 }
 */

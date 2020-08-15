@@ -1,13 +1,13 @@
 <%= render 'shared/errors', obj: @article%>
 
-<div class="row">
-  <div class="col-md-12">
+<div class="row justify-content-center">
+  <div class="col-md-8">
     <%= form_with model: @article, local: true, class: "form-horizontal" do |f| %>
       <div class="form-group">
         <div class="control-label col-md-2">
           <%= f.label :title %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
           <%= f.text_field :title, class: "form-control", placeholder: "Article Title", autofocus: true %>
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="control-label col-md-2">
           <%= f.label :Content %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
           <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Article Content" %>
         </div>
       </div> 
