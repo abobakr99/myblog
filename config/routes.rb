@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :users do 
     get '/my_articles', to: 'users#show_user_articles'
   end
+
   root "pages#home"
-  resources :articles
-  #get '/my_articles', to: 'articles#show_user_articles'
-  
+
+  resources :articles do 
+    resources :comments , only: [:create]
+  end   
 end

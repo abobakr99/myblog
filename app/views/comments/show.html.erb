@@ -1,0 +1,13 @@
+<h5> Comments </h5> <hr />
+<%= form_with model: @comment, local: true, class: "form-horizontal" do |f| %>
+  <div class="form-group">
+    <div class="col-md-12">
+      <%= f.text_field :body, class: "form-control", placeholder: "What do you think", autofocus: true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <%= f.submit class: "btn btn-primary " %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<%comments = article.comments.order("created_at DESC")%>
+<% comments.each do |comment| %>
+  <div class= "col-md-6">
+    <div>
+      <strong> <%= comment.user.name.capitalize()%> </strong>
+      <small> <%= time_ago_in_words(comment.created_at) %>  ago </small>
+    </div>
+    <div>
+      <p><%= comment.body%> </p>
+    </div>
+  </div>
+<hr />
+<% end %>

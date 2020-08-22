@@ -1,12 +1,10 @@
 <div class ="row justify-content-center">
   <div class= "col-md-8 col-offset-2">
-    <div class="card">
+    <div>
       <div class="card-header">
         <h2 class="article-title"><%= @article.title%> </h2><br/>
           <small > 
             <% author_name= @article.user.name.capitalize()%>
-            <!--<strong><%= @article.user.name.capitalize()%></strong> | 
-             -->
             <%= link_to author_name , user_my_articles_path(@article.user) %> |
             <%=@article.created_at.strftime("%B %d, %Y") %>
           </small>
@@ -16,8 +14,24 @@
           </div>
       </div>
       <div class="card-body article-body" >
-        <p> <%= @article.text%> </p> 
+        <p> <%= @article.text%> </p> <br/>
       </div>
+
+      <h5> Comments </h5> <hr />
+      <%= form_with model: [@article,@comment], local: true, class: "form-horizontal" do |f| %>
+        <div class="form-group">
+          <div class="col-md-12">
+            <%= f.text_field :body, class: "form-control", placeholder: "What do you think", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <%= f.submit "Comment", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render 'comments/comments', article: @article %>
     </div>
   </div>
 </div>

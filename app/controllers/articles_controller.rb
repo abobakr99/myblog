@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :find_article , only: [:edit,:update,:show,:destroy ]
   before_action :authenticate_user! , except: [:index, :show]
-  #before_action :find_all_articles , :only [:index, :show_user_articles]
+
   def index
     @articles= Article.all.order("created_at DESC")
   end
 
   def show
+    @comment = Comment.new
   end
   
   def new
@@ -49,7 +50,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text)
   end
-  def find_all_articles
-    @articles= Article.all
-  end
+  
 end
