@@ -1,0 +1,12 @@
+<% if @articles.any? %>
+  <%= render 'shared/page_title', title: "Bookmarks"%>
+  <%= render 'articles/articles_list', obj: @articles%>
+<% else %>
+  <div class="row justify-content-center">
+    <div class= "col-md-6">
+      <div class= "card-title">
+        <h2 class="mt-2 mb-2"> You have no bookmarks yet </h2>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -36,6 +36,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div><%= link_to 'New article', new_article_path , class:" dropdown-item"%> </div>
             <div><%= link_to 'My articles',  user_my_articles_path(current_user), class:" dropdown-item" %> </div>
+            <div><%= link_to 'Bookmarks',  user_bookmarks_path(current_user), class:" dropdown-item" %> </div>
             <div class="dropdown-divider"></div>
             <div><%= link_to 'Profile', edit_user_registration_path, class:" dropdown-item"%> </div>
             <div><%= link_to "Logout", destroy_user_session_path, method: :delete, class:" dropdown-item" %> </div>

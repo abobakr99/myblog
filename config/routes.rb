@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions',registrations: 'users/registrations'}
   resources :users do 
     get '/my_articles', to: 'users#show_user_articles'
+    resources :bookmarks , only: [:index]
   end
 
   root "pages#home"
 
-  resources :articles do 
+  resources :articles do
     resources :comments , only: [:create]
-  end   
+    resources :bookmarks , only: [:destroy,:create]
+  end
 end

@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :find_article , only: [:edit,:update,:show,:destroy ]
+  before_action :find_article , only: [:edit,:update,:show,:destroy ,:is_bookmarked]
   before_action :authenticate_user! , except: [:index, :show]
+  helper_method :bookmarked
 
   def index
     @articles= Article.all.order("created_at DESC")
@@ -8,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = Comment.new
+    @bookmark = Bookmark.new
   end
   
   def new
@@ -40,7 +42,16 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to articles_path
-  end 
+  end
+
+  def bookmarked
+    @bookmarks = current_user.bookmarks.order("created_at DESC")
+    articles = []
+    @bookmarks.each do |bookmark| 
+      articles.append(bookmark.article)
+    end 
+    return true if articles.include?(@article)
+  end
 
   private
   def find_article
@@ -50,5 +61,6 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text)
   end
+
   
 end
