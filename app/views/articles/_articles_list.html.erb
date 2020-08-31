@@ -8,7 +8,7 @@
           <p>
             <small class="font-size"> 
               By <% author_name= article.user.name.capitalize()%>
-              <%= link_to author_name ,  user_my_articles_path(article.user) %> |
+              <%= link_to author_name ,  user_articles_path(article.user) %> |
               <%=article.created_at.strftime("%B %d, %Y") %> |
               <% if article.comments.count > 1%>
                 <%=article.comments.count %> Comments

@@ -5,11 +5,14 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def create    
-    @comment = Comment.new(comment_params)
+  def create 
+    @article = Article.find(params[:article_id])
+    @comment = Comment.create(comment_params)
     @comment.user = current_user
-    @comment.article = @article    
-    if @comment.save
+    @comment.article = @article
+    #puts "====== save : #{} ======= "
+     
+    if @comment.save!
       redirect_to article_path(@article)
     else
       redirect_to new_user_session_path

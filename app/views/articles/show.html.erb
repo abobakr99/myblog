@@ -5,7 +5,7 @@
         <h2 class="article-title"><%= @article.title%> </h2><br/>
           <small > 
             <% author_name= @article.user.name.capitalize()%>
-            <%= link_to author_name , user_my_articles_path(@article.user) %> |
+            <%= link_to author_name , user_articles_path(@article.user) %> |
             <%=@article.created_at.strftime("%B %d, %Y") %>
           </small>
           <div class="float-right"> 
