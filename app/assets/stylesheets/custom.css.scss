@@ -65,66 +65,42 @@ $navbar-color-dark: #31676A;
 .card-header{
   background-color: white; 
 }
-.form-control:focus {
+form-control:focus {
   border-color: $navbar-color;
+}  
+.article-content {
+  resize: none;
+  overflow-y: scroll;
+  height:300px
 }
 
-.icon-color {
-  color: black;
-}
 /*
-.container{
-  //width: 100%;
-  //flex-flow: column wrap;
-  //justify-content: center;
-  //display: inline-block;
-  //padding-right: 15px;
-  //padding-left: 15px;
-  //margin-right: auto;
-  //margin-left: auto;
-}
-body {
-  margin: 0px;
-}
-.box{
-  padding: 20px;
-  //box-sizing: border-box;
-}
-.container-fluid{
-  height: 100%;
-  //display: table;
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-}
-.container{
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.right{
-  float: right;
-}
-.gap{
-  margin-top: 15px;
-  //margin-bottom: 5px;
-}
-.card-link{
-  color:$navbar-color-dark;
-}
-.navbar-brand {
-    font-size: 3rem;
-}
-h1 { 
-  color: red;
-}
-.card{
-  margin: 0 auto;
-}
+.
+.trix-content.form-control {
+  height:800px;
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
 
-.card{
-  margin: 0 auto;
-}
-*/
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+} 
+*/ 

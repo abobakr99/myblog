@@ -6,7 +6,7 @@
         <%= f.submit 'bookmark' ,class: "btn btn-info btn-sm mr-1" %>
       <%end%>
     <% else %>
-      <%= link_to 'bookmared', article_bookmark_path(@article) , class: "btn btn-info btn-sm mr-1" , method: :delete  %>
+      <%= link_to 'bookmarked', article_bookmark_path(@article) , class: "btn btn-info btn-sm mr-1" , method: :delete  %>
     <%end %>
    <%end%>
 
