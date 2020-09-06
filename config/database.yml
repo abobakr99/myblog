@@ -44,13 +44,12 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+production:
+  url: <%= ENV['DATABASE_URL'] %>
 #
 production:
   <<: *default
   database: myblog_production
   username: myblog
   password: <%= ENV['MYBLOG_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
-
+  #url: <%= ENV['DATABASE_URL'] %>
