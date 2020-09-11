@@ -47,7 +47,7 @@ test:
 production:
   url: <%= ENV['DATABASE_URL'] %>
 
-production:
- `database: myblog_production
-  username: myblog
-  password: <%= ENV['MYBLOG_DATABASE_PASSWORD'] %>
+#production:
+  #database: myblog_production
+  #username: myblog
+  #password: <%= ENV['MYBLOG_DATABASE_PASSWORD'] %> 
