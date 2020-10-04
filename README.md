@@ -1,5 +1,5 @@
-# Project Title
-# Motivation
+# MYBLOG
+[MYBLOG](https://abobakr-myblog.herokuapp.com/) is a web application that enables you to create posts as well as interacting with other users posts in the app.
 # Tech/framework used
 * Rails 6
 * Bootstrap 4
@@ -31,5 +31,5 @@ rails server
 ```
 ### 5. open the app in the browser 
 ```
-https://localhost:3000
+http://localhost:3000
 ```
